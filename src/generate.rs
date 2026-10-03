@@ -16,14 +16,12 @@ impl Sudoku {
         return new_sudoku;
     }
     pub fn validate (&self) -> bool {
-        let mut is_valid: bool = true;
         for sqr in 0..self.content.len() {
             if !self.validate_square(sqr as i32) {
                 return false;
-                break;
             }
         }
-        return is_valid;
+        return true;
     }
     pub fn validate_square (&self, square: i32) -> bool { // this function is an ABOMINATION, but it works :)
         
