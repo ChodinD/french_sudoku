@@ -1,5 +1,5 @@
 mod generate;
-const SIZE: i32 = 3;
+const SIZE: i32 = 3; // okay, we dont implement a way to change this YET, this would be too much
 
 #[derive(Debug, Clone, Copy)]
 struct Sudoku {
@@ -9,7 +9,15 @@ struct Sudoku {
 
 fn main() {
     // let main_sudoku = Sudoku::random_generate();
-    println!("passed {} tests",test());
+    // println!("passed {} tests",test());
+    let mut main_sudoku = Sudoku::random_generate();
+
+    for i in 0..9 {
+        for j in 0..9 {
+            print!("{}  ",main_sudoku.content[j+i*9]);
+        }
+        print!("\n");
+    }
 }
 
 fn test() -> i32 {
